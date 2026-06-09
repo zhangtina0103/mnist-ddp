@@ -1,7 +1,7 @@
 # mnist-ddp
 
 Here I implement distributed data parallel (DDP) from scratch using PyTorch distributed and NCCL, trained on MNIST across two L40 GPUs on Slurm (MIT Engaging cluster).
-For my own conceptual understanding purposes, I used MNIST, but in reality it's a bit too small so AllReduce communication overhead between GPUs outweights compute savings but DDP performs well on large models and datasets
+For my own conceptual understanding purposes, I used MNIST, but in reality it's a bit too small so AllReduce communication overhead between GPUs outweights compute savings but in theory DDP performs well on large models and datasets
 
 ## Details
 
