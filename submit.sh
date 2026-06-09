@@ -3,11 +3,10 @@
 #SBATCH --output=logs/%j.out
 #SBATCH --error=logs/%j.err
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=2
-#SBATCH --gres=gpu:2
-#SBATCH --mem=16G
+#SBATCH --gres=gpu:l40s:2
+#SBATCH --mem=32G
 #SBATCH --time=00:30:00
-#SBATCH --partition=gpu
+#SBATCH --partition=mit_normal_gpu
 
 module load cuda/12.1
 module load python/3.10
@@ -25,7 +24,7 @@ echo "single GPU time: ${single_time}s"
 
 echo ""
 echo "========================================"
-echo "DDP training (2 GPUs)"
+echo "DDP training (2 x L40S)"
 echo "========================================"
 start_ddp=$SECONDS
 python train_ddp.py
