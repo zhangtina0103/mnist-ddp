@@ -1,0 +1,75 @@
+========================================
+single GPU training
+========================================
+training on cuda
+epoch 1 | batch 0/938 | loss 2.3180
+epoch 1 | batch 100/938 | loss 0.0970
+epoch 1 | batch 200/938 | loss 0.1275
+epoch 1 | batch 300/938 | loss 0.0826
+epoch 1 | batch 400/938 | loss 0.1618
+epoch 1 | batch 500/938 | loss 0.0983
+epoch 1 | batch 600/938 | loss 0.0651
+epoch 1 | batch 700/938 | loss 0.0725
+epoch 1 | batch 800/938 | loss 0.0444
+epoch 1 | batch 900/938 | loss 0.0760
+epoch 1 done | avg loss 0.1318 | accuracy 96.00%
+epoch 2 | batch 0/938 | loss 0.0750
+epoch 2 | batch 100/938 | loss 0.0218
+epoch 2 | batch 200/938 | loss 0.0211
+epoch 2 | batch 300/938 | loss 0.0268
+epoch 2 | batch 400/938 | loss 0.0267
+epoch 2 | batch 500/938 | loss 0.0446
+epoch 2 | batch 600/938 | loss 0.0069
+epoch 2 | batch 700/938 | loss 0.0116
+epoch 2 | batch 800/938 | loss 0.0059
+epoch 2 | batch 900/938 | loss 0.0141
+epoch 2 done | avg loss 0.0427 | accuracy 98.67%
+epoch 3 | batch 0/938 | loss 0.0116
+epoch 3 | batch 100/938 | loss 0.0062
+epoch 3 | batch 200/938 | loss 0.0034
+epoch 3 | batch 300/938 | loss 0.0656
+epoch 3 | batch 400/938 | loss 0.0086
+epoch 3 | batch 500/938 | loss 0.0157
+epoch 3 | batch 600/938 | loss 0.0215
+epoch 3 | batch 700/938 | loss 0.0760
+epoch 3 | batch 800/938 | loss 0.1709
+epoch 3 | batch 900/938 | loss 0.1119
+epoch 3 done | avg loss 0.0302 | accuracy 99.06%
+
+total time: 19.89s
+single GPU time: 35s
+
+========================================
+DDP training (2 x L40S)
+========================================
+found 2 GPUs
+rank 0 initialized
+rank 1 initialized
+rank 0 | epoch 1 | batch 0/469 | loss 2.3073
+rank 0 | epoch 1 | batch 100/469 | loss 0.0942
+rank 0 | epoch 1 | batch 200/469 | loss 0.1238
+rank 0 | epoch 1 | batch 300/469 | loss 0.0489
+rank 0 | epoch 1 | batch 400/469 | loss 0.0674
+epoch 1 done | avg loss 0.1747 | accuracy 94.74%
+rank 0 | epoch 2 | batch 0/469 | loss 0.0160
+rank 0 | epoch 2 | batch 100/469 | loss 0.1263
+rank 0 | epoch 2 | batch 200/469 | loss 0.0283
+rank 0 | epoch 2 | batch 300/469 | loss 0.0650
+rank 0 | epoch 2 | batch 400/469 | loss 0.0794
+epoch 2 done | avg loss 0.0485 | accuracy 98.50%
+rank 0 | epoch 3 | batch 0/469 | loss 0.0044
+rank 0 | epoch 3 | batch 100/469 | loss 0.0256
+rank 0 | epoch 3 | batch 200/469 | loss 0.0150
+rank 0 | epoch 3 | batch 300/469 | loss 0.0051
+rank 0 | epoch 3 | batch 400/469 | loss 0.0056
+epoch 3 done | avg loss 0.0347 | accuracy 98.94%
+
+total time: 56.70s
+DDP time: 60s
+
+========================================
+RESULTS
+========================================
+single GPU: 35s
+DDP 2 GPU:  60s
+speedup: 0.58x
